@@ -2401,49 +2401,108 @@ button, input, textarea {
     font-size: 1.25rem;
   }
 
-  .service-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  /* Hero Header Badge Mobile Fix */
+  .hero-header-badge {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.1em !important;
+    padding: 6px 14px !important;
+    max-width: 92vw !important;
+    margin: 0 auto 16px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    word-break: break-word !important;
   }
 
+  /* Services Section Mobile Fix */
   .service-card {
-    padding: 20px 16px;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* About Section Mobile */
-  .about-photo-frame {
-    min-height: auto;
-    padding: 10px;
-    border-radius: 18px;
+  .service-tech {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
   }
 
-  .developer-photo {
-    max-height: 340px;
-    object-fit: contain;
+  .service-tech span {
+    font-size: 0.62rem !important;
+    padding: 4px 8px !important;
   }
 
-  .advantages-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  /* Contact Section & Email Box Mobile Fix */
+  .contact-left h2 {
+    font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
   }
 
-  /* Contact Form Mobile */
+  .contact-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .contact-direct {
+    padding: 18px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .email-box {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-email {
+    font-size: 0.88rem !important;
+    word-break: break-all !important;
+    text-align: center !important;
+    line-height: 1.35 !important;
+  }
+
+  .btn-copy {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 8px 12px !important;
+  }
+
+  /* Quick Inquiry Form & Chips Mobile Fix */
   .inquiry-form {
-    padding: 22px 16px;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 16px !important;
+  }
+
+  .inquiry-form h3 {
+    font-size: 1.3rem !important;
   }
 
   .interest-chips {
-    gap: 6px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
   }
 
   .chip {
-    font-size: 0.65rem;
-    padding: 6px 10px;
+    font-size: 0.65rem !important;
+    padding: 8px 4px !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   input, textarea, select {
     font-size: 16px !important; /* Fixes iOS Safari auto-zoom on input focus */
-    padding: 12px 14px;
+    padding: 12px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Modals Mobile */
@@ -2481,15 +2540,19 @@ button, input, textarea {
 
 @media (max-width: 480px) {
   .hero-monumental-title {
-    font-size: 1.7rem;
+    font-size: 1.65rem !important;
   }
 
   .hero-status-pill {
-    font-size: 0.58rem;
-    padding: 4px 10px;
+    font-size: 0.58rem !important;
+    padding: 4px 10px !important;
   }
 
   .showcase-bottom-hint {
-    font-size: 0.6rem;
+    font-size: 0.6rem !important;
+  }
+
+  .interest-chips {
+    grid-template-columns: 1fr !important;
   }
 }
