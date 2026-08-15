@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCardSpotlight();
   setupHeroGameTabs();
   setup3DAssetThumbnails();
+  setupMobileMenu();
   setupGameModals();
   setupImageLightbox();
   setupCategoryFilters();
@@ -114,6 +115,27 @@ document.addEventListener('DOMContentLoaded', () => {
   setupStatsCounters();
   updateYears();
 });
+
+// Mobile Menu Navigation Toggle
+function setupMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (!toggleBtn || !navLinks) return;
+
+  toggleBtn.addEventListener('click', () => {
+    playTone(700, 0.05, 'sine');
+    toggleBtn.classList.toggle('active');
+    navLinks.classList.toggle('mobile-active');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggleBtn.classList.remove('active');
+      navLinks.classList.remove('mobile-active');
+    });
+  });
+}
 
 // 3D Asset Thumbnail Gallery Switcher
 function setup3DAssetThumbnails() {
