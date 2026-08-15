@@ -2126,23 +2126,54 @@ button, input, textarea {
   /* Prevent horizontal scroll globally */
   html, body {
     overflow-x: hidden !important;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100vw !important;
+    position: relative;
+  }
+
+  * {
     max-width: 100vw;
   }
 
-  /* Compact Navbar for Mobile */
+  /* Compact Navbar for Mobile - NEVER CLIPS */
   .nav {
-    height: 68px;
-    padding: 0 4vw;
+    height: 64px;
+    padding: 0 12px;
+    justify-content: space-between;
   }
 
   .brand-text {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
 
   .brand-text small {
     display: block;
-    font-size: 0.55rem;
+    font-size: 0.52rem;
+  }
+
+  .nav-right {
+    gap: 6px;
+  }
+
+  .sound-btn { display: none !important; }
+  .mini-cta { display: none !important; }
+
+  .mobile-cta-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(255, 0, 127, 0.2));
+    border: 1.5px solid var(--cyan);
+    color: var(--cyan);
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+    font-weight: 800;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 0 0 16px rgba(0, 240, 255, 0.3);
   }
 
   .mobile-menu-toggle {
@@ -2156,7 +2187,7 @@ button, input, textarea {
     cursor: pointer;
     z-index: 110;
     padding: 0;
-    margin-left: 8px;
+    margin-left: 4px;
   }
 
   .mobile-menu-toggle span {
@@ -2180,7 +2211,7 @@ button, input, textarea {
   .nav-links {
     display: flex;
     position: fixed;
-    top: 68px;
+    top: 64px;
     left: 0;
     right: 0;
     background: rgba(8, 6, 16, 0.98);
@@ -2189,7 +2220,7 @@ button, input, textarea {
     border-bottom: 1.5px solid var(--cyan);
     flex-direction: column;
     padding: 20px 6vw;
-    gap: 16px;
+    gap: 14px;
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
@@ -2206,13 +2237,17 @@ button, input, textarea {
 
   .nav-links a {
     font-size: 0.88rem;
-    padding: 10px 0;
+    padding: 8px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .sound-btn { display: none; }
   .social-icon-btn { width: 32px; height: 32px; min-width: 32px; }
-  .mini-cta { padding: 5px 12px; font-size: 0.6rem; }
+
+  .stage-glow-spotlight {
+    width: 100% !important;
+    max-width: 90vw !important;
+    height: 220px !important;
+  }
 
   /* Hero Section Mobile */
   .hero {
