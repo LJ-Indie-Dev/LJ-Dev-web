@@ -2104,7 +2104,7 @@ button, input, textarea {
 
 /* Comprehensive Responsive Styles for Tablets & Smartphones */
 @media (max-width: 992px) {
-  /* Prevent horizontal scroll globally */
+  /* Global Page & Boundary Lock */
   html, body {
     overflow-x: hidden !important;
     width: 100% !important;
@@ -2114,27 +2114,35 @@ button, input, textarea {
 
   * {
     max-width: 100vw;
+    box-sizing: border-box;
   }
 
-  /* Compact Navbar for Mobile - NEVER CLIPS */
+  .section {
+    padding: 48px 4vw !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 1. TOP NAVBAR & MENU DRAWER */
   .nav {
-    height: 64px;
-    padding: 0 12px;
-    justify-content: space-between;
+    height: 64px !important;
+    padding: 0 12px !important;
+    justify-content: space-between !important;
   }
 
   .brand-text {
-    font-size: 0.78rem;
-    white-space: nowrap;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
   }
 
   .brand-text small {
-    display: block;
-    font-size: 0.52rem;
+    display: block !important;
+    font-size: 0.52rem !important;
   }
 
   .nav-right {
-    gap: 6px;
+    gap: 6px !important;
   }
 
   .sound-btn { display: none !important; }
@@ -2158,77 +2166,84 @@ button, input, textarea {
   }
 
   .mobile-menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 110;
-    padding: 0;
-    margin-left: 4px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 26px !important;
+    height: 18px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 110 !important;
+    padding: 0 !important;
+    margin-left: 4px !important;
   }
 
   .mobile-menu-toggle span {
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    border-radius: 4px;
-    transition: var(--transition-fast);
+    width: 100% !important;
+    height: 2px !important;
+    background: #fff !important;
+    border-radius: 4px !important;
+    transition: var(--transition-fast) !important;
   }
 
   .mobile-menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg) !important;
   }
   .mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
   }
   .mobile-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg) !important;
   }
 
   .nav-links {
-    display: flex;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: rgba(8, 6, 16, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1.5px solid var(--cyan);
-    flex-direction: column;
-    padding: 20px 6vw;
-    gap: 14px;
-    transform: translateY(-120%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95);
-    z-index: 99;
+    display: flex !important;
+    position: fixed !important;
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(8, 6, 16, 0.98) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border-bottom: 1.5px solid var(--cyan) !important;
+    flex-direction: column !important;
+    padding: 20px 6vw !important;
+    gap: 14px !important;
+    transform: translateY(-120%) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 0.35s ease, opacity 0.35s ease !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95) !important;
+    z-index: 99 !important;
   }
 
   .nav-links.mobile-active {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 
   .nav-links a {
-    font-size: 0.88rem;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.88rem !important;
+    padding: 8px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
-  .social-icon-btn { width: 32px; height: 32px; min-width: 32px; }
+  .social-icon-btn { width: 32px !important; height: 32px !important; min-width: 32px !important; }
 
-  /* 1. HERO TOP BADGES & TECH TAGS MOBILE FIX */
+  /* 2. HERO SECTION & TOP BADGES */
+  .hero {
+    padding-top: 90px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+
   .hero-top {
+    display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     margin-bottom: 20px !important;
     width: 100% !important;
   }
@@ -2243,6 +2258,7 @@ button, input, textarea {
   }
 
   .hero-tech-tags {
+    display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 6px !important;
@@ -2254,35 +2270,40 @@ button, input, textarea {
     padding: 4px 8px !important;
   }
 
-  .hero-monumental-title {
-    font-size: clamp(1.6rem, 7vw, 2.8rem) !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 16px !important;
-    word-break: break-word !important;
-  }
-
   .hero-header-badge {
     font-size: 0.65rem !important;
-    letter-spacing: 0.1em !important;
+    letter-spacing: 0.08em !important;
     padding: 6px 14px !important;
     max-width: 92vw !important;
-    margin: 0 auto 16px !important;
+    margin: 0 auto 14px !important;
     white-space: normal !important;
     text-align: center !important;
     word-break: break-word !important;
   }
 
-  /* Hero CTA Group Buttons Mobile Fix */
+  .hero-monumental-title {
+    font-size: clamp(1.6rem, 7.5vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 14px !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .hero-monumental-sub {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+    text-align: center !important;
+  }
+
   .hero-cta-group {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 12px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 32px !important;
-    box-sizing: border-box !important;
+    margin-bottom: 30px !important;
   }
 
   .hero-cta-group .btn,
@@ -2299,10 +2320,11 @@ button, input, textarea {
     word-break: break-word !important;
   }
 
+  /* 3D Showcase Frame Mobile */
   .stage-glow-spotlight {
     width: 100% !important;
     max-width: 90vw !important;
-    height: 220px !important;
+    height: 200px !important;
   }
 
   .hero-stage-showcase {
@@ -2314,6 +2336,7 @@ button, input, textarea {
     min-height: auto !important;
     padding: 14px !important;
     border-radius: 18px !important;
+    width: 100% !important;
   }
 
   .showcase-top-bar {
@@ -2335,24 +2358,50 @@ button, input, textarea {
   }
 
   .showcase-image-container {
-    height: 220px !important;
-    max-height: 240px !important;
+    height: 200px !important;
+    max-height: 220px !important;
   }
 
   .showcase-img {
-    max-height: 200px !important;
+    max-height: 180px !important;
   }
 
   .hero-stats-banner {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    padding: 18px 16px !important;
-    margin-top: 40px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px 12px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
   }
 
   .stat-divider { display: none !important; }
 
-  /* Work Grid & Cards Mobile Fix */
+  .stat-number { font-size: 1.4rem !important; }
+  .stat-label { font-size: 0.62rem !important; letter-spacing: 0.08em !important; }
+
+  /* 3. SECTION HEADINGS & TAGS GLOBAL MOBILE FIX */
+  .section-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .section-tag {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.08em !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    max-width: 100% !important;
+  }
+
+  .section-head p {
+    text-align: left !important;
+    font-size: 0.86rem !important;
+  }
+
+  /* 4. SECTION 01: WORK / PROJECTS GRID */
   .work-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -2366,30 +2415,42 @@ button, input, textarea {
   }
 
   .project-media {
-    height: 220px !important;
+    height: 210px !important;
     width: 100% !important;
   }
 
   .project-info {
-    padding: 20px 16px !important;
+    padding: 18px 14px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* Global Section Tag Mobile Fix */
-  .section-tag {
-    font-size: 0.65rem !important;
-    letter-spacing: 0.08em !important;
-    white-space: normal !important;
-    word-break: break-word !important;
-    max-width: 100% !important;
+  .project-title { font-size: 1.25rem !important; }
+  .project-desc { font-size: 0.86rem !important; line-height: 1.5 !important; }
+
+  /* 5. SECTION 01.5: JAK MŮŽEME SPOLUPRACOVAT */
+  .audience-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 100% !important;
   }
 
-  /* 2. SERVICES SECTION HEADING & SUBTEXT MOBILE FIX */
+  .audience-card {
+    width: 100% !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .audience-card h3 { font-size: 1.2rem !important; }
+  .audience-card p { font-size: 0.86rem !important; line-height: 1.5 !important; }
+  .btn-audience-action { width: 100% !important; text-align: center !important; display: block !important; }
+
+  /* 6. SECTION 02: SERVICES / SLUŽBY NA ZAKÁZKU */
   .service-layout {
     display: flex !important;
     flex-direction: column !important;
-    gap: 24px !important;
+    gap: 20px !important;
     width: 100% !important;
   }
 
@@ -2397,7 +2458,7 @@ button, input, textarea {
     position: static !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 16px !important;
   }
 
   .services-heading-wrap h2 {
@@ -2405,14 +2466,14 @@ button, input, textarea {
     line-height: 1.15 !important;
     letter-spacing: -0.01em !important;
     word-break: break-word !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
     width: 100% !important;
   }
 
   .services-subtext {
     font-size: 0.88rem !important;
     line-height: 1.5 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 18px !important;
     max-width: 100% !important;
     width: 100% !important;
   }
@@ -2428,92 +2489,107 @@ button, input, textarea {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 20px 16px !important;
+    padding: 18px 14px !important;
     gap: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* Audience Breakdown Mobile Fix (Jak můžeme spolupracovat) */
-  .audience-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-    width: 100% !important;
+  .service-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
   }
 
-  .audience-card {
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
+  .service-card h3 { font-size: 1.15rem !important; }
+  .service-card p { font-size: 0.86rem !important; line-height: 1.5 !important; }
 
-  /* 3. ABOUT & ADVANTAGES MOBILE FIX */
+  /* 7. SECTION 03: ABOUT & ADVANTAGES */
   .about-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 32px !important;
+    gap: 28px !important;
+    width: 100% !important;
   }
 
   .about-photo-frame {
     min-height: auto !important;
-    padding: 10px !important;
-    border-radius: 18px !important;
+    padding: 8px !important;
+    border-radius: 16px !important;
+    max-height: 320px !important;
   }
 
   .developer-photo {
-    max-height: 340px !important;
+    max-height: 300px !important;
     object-fit: contain !important;
   }
+
+  .about-copy h2 {
+    font-size: clamp(1.5rem, 6.5vw, 2.3rem) !important;
+    line-height: 1.15 !important;
+    word-break: break-word !important;
+  }
+
+  .about-bio { font-size: 0.88rem !important; line-height: 1.55 !important; }
 
   .advantages-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 14px !important;
     width: 100% !important;
   }
 
-  /* 4. CONTACT & QUICK INQUIRY MOBILE FIX */
+  .adv-card {
+    padding: 18px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 8. SECTION 04: CONTACT & QUICK INQUIRY FORM */
   .contact-container {
-    padding: 50px 4vw !important;
+    padding: 40px 4vw !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
   }
 
   .contact-left h2 {
-    font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.02em !important;
+    font-size: clamp(1.5rem, 6.5vw, 2.3rem) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em !important;
     word-break: break-word !important;
   }
 
   .contact-desc {
     font-size: 0.88rem !important;
     line-height: 1.5 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
   }
 
   .contact-direct {
-    padding: 18px 14px !important;
+    padding: 16px 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .email-box {
+    display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
-    padding: 12px 12px !important;
+    padding: 10px 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .contact-email {
-    font-size: 0.85rem !important;
+    font-size: 0.82rem !important;
     word-break: break-all !important;
     text-align: center !important;
     line-height: 1.35 !important;
@@ -2526,14 +2602,14 @@ button, input, textarea {
   }
 
   .inquiry-form {
-    padding: 20px 16px !important;
+    padding: 18px 14px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    gap: 16px !important;
+    gap: 14px !important;
   }
 
   .inquiry-form h3 {
-    font-size: 1.3rem !important;
+    font-size: 1.25rem !important;
   }
 
   .interest-chips {
@@ -2558,11 +2634,11 @@ button, input, textarea {
     box-sizing: border-box !important;
   }
 
-  /* Modals & Footer Mobile */
+  /* 9. MODALS & FOOTER MOBILE */
   .modal-dialog {
-    max-width: 94vw !important;
+    max-width: 95vw !important;
     margin: 10px auto !important;
-    border-radius: 18px !important;
+    border-radius: 16px !important;
   }
 
   .modal-header-media {
@@ -2570,13 +2646,24 @@ button, input, textarea {
   }
 
   .modal-body {
-    padding: 18px 14px !important;
+    padding: 16px 12px !important;
   }
 
   .modal-meta-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 10px !important;
     padding: 12px !important;
+  }
+
+  .modal-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .modal-actions .btn {
+    width: 100% !important;
   }
 
   .lightbox-content img {
@@ -2584,10 +2671,11 @@ button, input, textarea {
   }
 
   .footer {
+    display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 12px !important;
     text-align: center !important;
-    padding: 28px 5vw !important;
+    padding: 24px 4vw !important;
   }
 
   #custom-cursor, #custom-cursor-dot { display: none !important; }
@@ -2595,7 +2683,7 @@ button, input, textarea {
 
 @media (max-width: 480px) {
   .hero-monumental-title {
-    font-size: 1.65rem !important;
+    font-size: 1.6rem !important;
   }
 
   .hero-status-pill {
