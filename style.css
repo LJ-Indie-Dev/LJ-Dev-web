@@ -2547,7 +2547,7 @@ button, input, textarea {
 
   /* 8. SECTION 04: CONTACT & QUICK INQUIRY FORM */
   .contact-container {
-    padding: 40px 4vw !important;
+    padding: 48px 4vw !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -2557,6 +2557,12 @@ button, input, textarea {
     flex-direction: column !important;
     gap: 28px !important;
     width: 100% !important;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .contact-left h2 {
@@ -2573,8 +2579,9 @@ button, input, textarea {
   }
 
   .contact-direct {
-    padding: 16px 12px !important;
+    padding: 22px 18px !important;
     width: 100% !important;
+    border-radius: 20px !important;
     box-sizing: border-box !important;
   }
 
@@ -2583,13 +2590,13 @@ button, input, textarea {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
-    padding: 10px 12px !important;
+    padding: 12px 14px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .contact-email {
-    font-size: 0.82rem !important;
+    font-size: 0.85rem !important;
     word-break: break-all !important;
     text-align: center !important;
     line-height: 1.35 !important;
@@ -2602,10 +2609,11 @@ button, input, textarea {
   }
 
   .inquiry-form {
-    padding: 18px 14px !important;
+    padding: 24px 20px !important;
     width: 100% !important;
+    border-radius: 20px !important;
     box-sizing: border-box !important;
-    gap: 14px !important;
+    gap: 16px !important;
   }
 
   .inquiry-form h3 {
