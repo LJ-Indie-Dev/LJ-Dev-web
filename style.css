@@ -963,9 +963,12 @@ button, input, textarea {
 
 .card-status-pill {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 14px;
+  left: 14px;
   z-index: 10;
+  background: rgba(6, 4, 14, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .hero-status-pill {
@@ -974,10 +977,10 @@ button, input, textarea {
   left: auto;
 }
 
-.status-soon { background: rgba(0, 240, 255, 0.18); border: 1.5px solid rgba(0, 240, 255, 0.6); color: var(--cyan); box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); }
-.status-progress { background: rgba(255, 179, 0, 0.18); border: 1.5px solid rgba(255, 179, 0, 0.6); color: var(--amber); box-shadow: 0 0 15px rgba(255, 179, 0, 0.3); }
-.status-dev { background: rgba(255, 0, 127, 0.18); border: 1.5px solid rgba(255, 0, 127, 0.6); color: var(--pink); box-shadow: 0 0 15px rgba(255, 0, 127, 0.3); }
-.status-custom { background: rgba(157, 78, 223, 0.18); border: 1.5px solid rgba(157, 78, 223, 0.6); color: var(--violet); box-shadow: 0 0 15px rgba(157, 78, 223, 0.3); }
+.status-soon { background: rgba(6, 4, 14, 0.92); border: 1.5px solid var(--cyan); color: var(--cyan); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.4); }
+.status-progress { background: rgba(6, 4, 14, 0.92); border: 1.5px solid var(--amber); color: var(--amber); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 179, 0, 0.4); }
+.status-dev { background: rgba(6, 4, 14, 0.92); border: 1.5px solid var(--pink); color: var(--pink); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 0, 127, 0.4); }
+.status-custom { background: rgba(6, 4, 14, 0.92); border: 1.5px solid var(--violet); color: var(--violet); box-shadow: 0 4px 18px rgba(0, 0, 0, 0.8), 0 0 15px rgba(157, 78, 223, 0.4); }
 
 .project-info {
   padding: 28px;
@@ -2466,6 +2469,18 @@ button, input, textarea {
   .project-media {
     height: 210px !important;
     width: 100% !important;
+  }
+
+  .card-status-pill {
+    top: 10px !important;
+    left: 10px !important;
+    font-size: 0.58rem !important;
+    padding: 5px 10px !important;
+    letter-spacing: 0.08em !important;
+    background: rgba(4, 3, 10, 0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.95) !important;
   }
 
   .project-info {
