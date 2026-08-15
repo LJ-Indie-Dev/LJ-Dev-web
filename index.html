@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lukáš Jurečka — Indie Game Developer & 3D Specialist</title>
+<meta name="description" content="Lukáš Jurečka / Indie game developer. Tvořím vlastní hry, možnost tvorby modelů, herní logiky a skriptů na zakázku. Projekty Gravity Flip, Puzzle World, Last Island Colony.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Top Scroll Progress Bar -->
+<div id="scroll-progress"></div>
+
+<!-- Custom Neon Cursor Follower -->
+<div id="custom-cursor"></div>
+<div id="custom-cursor-dot"></div>
+
+<!-- Ambient Interactive Canvas Background -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- Header & Glass Navigation -->
+<header class="nav">
+  <a class="brand" href="#home" aria-label="Lukáš Jurečka Home">
+    <div class="brand-logo-icon">LJ</div>
+    <div class="brand-text">
+      LUKÁŠ JUREČKA <small>INDIE GAME DEV</small>
+    </div>
+  </a>
+  
+  <nav class="nav-links" aria-label="Main Navigation">
+    <a href="#home" data-cs="DOMŮ" data-en="HOME">DOMŮ</a>
+    <a href="#work" data-cs="PROJEKTY" data-en="WORK">PROJEKTY</a>
+    <a href="#services" data-cs="SLUŽBY" data-en="SERVICES">SLUŽBY</a>
+    <a href="#about" data-cs="O MNĚ" data-en="ABOUT">O MNĚ</a>
+    <a href="#contact" data-cs="KONTAKT" data-en="CONTACT">KONTAKT</a>
+  </nav>
+
+  <div class="nav-right">
+    <!-- Sound FX Synthesizer Toggle -->
+    <button id="sound-toggle" class="sound-btn" data-cs="ZVUK: VYPNUTO" data-en="SOUND: OFF" aria-label="Toggle Sound Effects">ZVUK: VYPNUTO</button>
+    
+    <!-- Language Switcher -->
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="cs" aria-label="Čeština">CZ</button>
+      <span class="lang-divider">/</span>
+      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+    </div>
+
+    <!-- Instagram Social Icon Button -->
+    <a href="https://www.instagram.com/l_j_dev/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram Lukáš Jurečka (@l_j_dev)" title="Instagram @l_j_dev">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    
+    <a class="mini-cta" href="#contact" data-cs="ZAČÍT PROJEKT" data-en="START PROJECT">ZAČÍT PROJEKT</a>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- Centered Monumental Hero Stage Section -->
+<section class="hero cinematic-hero">
+  <div class="hero-bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="hero-top">
+    <div class="badge-status">
+      <span class="pulse-dot"></span>
+      <span data-cs="DOSTUPNÝ PRO ZAKÁZKOVÝ VÝVOJ" data-en="AVAILABLE FOR CUSTOM WORK">DOSTUPNÝ PRO ZAKÁZKOVÝ VÝVOJ</span>
+    </div>
+    <div class="hero-tech-tags">
+      <span>UNITY 2D/3D</span> <span>C# PROGRAMMING</span> <span>BLENDER</span> <span>ANDROID</span>
+    </div>
+  </div>
+
+  <div class="hero-stage-container">
+    <div class="hero-header-badge" data-cs="LUKÁŠ JUREČKA / INDIE GAME DEVELOPER" data-en="LUKÁŠ JUREČKA / INDIE GAME DEVELOPER">LUKÁŠ JUREČKA / INDIE GAME DEVELOPER</div>
+    
+    <h1 class="hero-monumental-title">
+      <span data-cs="TVOŘÍM VLASTNÍ HRY" data-en="CREATING ORIGINAL GAMES">TVOŘÍM VLASTNÍ HRY</span>
+    </h1>
+    
+    <p class="hero-monumental-sub" data-cs="Možnost tvorby modelů, herní logiky a skriptů na zakázku." data-en="Custom 3D modeling, game mechanics, and C# scripting services.">Možnost tvorby modelů, herní logiky a skriptů na zakázku.</p>
+    
+    <div class="hero-cta-group">
+      <a href="#work" class="btn btn-primary" data-cs="PROZKOUMAT MOJE HRY" data-en="EXPLORE MY GAMES">
+        <span>PROZKOUMAT MOJE HRY</span>
+        <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-secondary" data-cs="NEZÁVAZNÁ POPTÁVKA" data-en="GET IN TOUCH">NEZÁVAZNÁ POPTÁVKA</a>
+    </div>
+
+    <!-- Floating 3D Showcase Stage -->
+    <div class="hero-stage-showcase" data-tilt>
+      <div class="stage-glow-spotlight"></div>
+      <div id="hero-media-wrap" class="stage-holo-frame open-game-modal" data-game="gravity-flip">
+        <div class="showcase-top-bar">
+          <div class="showcase-tabs">
+            <button class="hero-game-tab active" data-hero-game="gravity-flip">GRAVITY FLIP</button>
+            <button class="hero-game-tab" data-hero-game="puzzle-world">PUZZLE WORLD</button>
+            <button class="hero-game-tab" data-hero-game="last-island">LAST ISLAND</button>
+          </div>
+          <span id="hero-status-pill" class="hero-status-pill status-soon" data-cs="BRZY NA GOOGLE PLAY" data-en="COMING SOON TO GOOGLE PLAY">BRZY NA GOOGLE PLAY</span>
+        </div>
+
+        <div class="showcase-image-container">
+          <img id="hero-showcase-img" src="assets/images/gravity_flip.png" alt="Gravity Flip Game Showcase" class="showcase-img">
+        </div>
+
+        <div class="showcase-bottom-hint">
+          <span data-cs="KLIKNI PRO DETAIL HRY" data-en="CLICK FOR GAME DETAILS">KLIKNI PRO DETAIL HRY</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Quick Stats Ribbon Banner -->
+  <div class="hero-stats-banner">
+    <div class="stat-item">
+      <span class="stat-number counter" data-target="3">3</span>
+      <span class="stat-label" data-cs="Hry ve vývoji & koncepty" data-en="Games in dev & concepts">Hry ve vývoji & koncepty</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label" data-cs="Vlastní C# Architektura" data-en="Custom C# Architecture">Vlastní C# Architektura</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">60+</span>
+      <span class="stat-label" data-cs="FPS Mobilní optimalizace" data-en="FPS Mobile optimization">FPS Mobilní optimalizace</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">3D</span>
+      <span class="stat-label" data-cs="Blender Assety na zakázku" data-en="Blender Assets on demand">Blender Assety na zakázku</span>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <span data-cs="POSUŇTE DOLŮ PRO PROHLÍDKU" data-en="SCROLL TO EXPLORE">POSUŇTE DOLŮ PRO PROHLÍDKU</span>
+    <span>© <span class="current-year">2026</span> LUKÁŠ JUREČKA</span>
+  </div>
+</section>
+
+<!-- Work Section (Projects) -->
+<section id="work" class="section work-section">
+  <div class="section-head">
+    <div class="section-tag"><span class="tag-num">01</span> // <b data-cs="MOJE HRY A PROJEKTY" data-en="MY GAMES & PROJECTS">MOJE HRY A PROJEKTY</b></div>
+  </div>
+  <div class="header-accent-line"></div>
+
+  <!-- Category Filter Bar -->
+  <div class="project-filter-bar">
+    <button class="filter-btn active" data-filter="all" data-cs="VŠECHNY PROJEKTY" data-en="ALL PROJECTS">VŠECHNY PROJEKTY</button>
+    <button class="filter-btn" data-filter="game" data-cs="HRY" data-en="GAMES">HRY</button>
+    <button class="filter-btn" data-filter="3d" data-cs="3D ASSETY" data-en="3D ASSETS">3D ASSETY</button>
+    <button class="filter-btn" data-filter="dev" data-cs="VE VÝVOJI" data-en="IN DEVELOPMENT">VE VÝVOJI</button>
+  </div>
+
+  <div class="work-grid">
+    <!-- Project 1: Gravity Flip -->
+    <article class="project open-game-modal" data-project="gravity-flip" data-category="game" data-game="gravity-flip">
+      <div class="project-card-glow"></div>
+      <div class="project-media">
+        <img src="assets/images/gravity_flip.png" alt="Gravity Flip Game Showcase" class="project-img-view" loading="lazy">
+        <div class="card-status-pill status-soon" data-cs="BRZY NA GOOGLE PLAY" data-en="COMING SOON TO GOOGLE PLAY">BRZY NA GOOGLE PLAY</div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-tags">
+          <span>UNITY 2D</span> <span>ANDROID</span> <span>ACTION RUNNER</span>
+        </div>
+        <h2 class="project-title">Gravity Flip</h2>
+        <p class="project-desc" data-cs="Rychlá 2D runner hra založená na obracení gravitace. Doběhni co nejdále, vyhýbej se překážkám, sbírej mince a aktivuj power-upy v dynamickém prostředí." data-en="A fast-paced 2D runner featuring instant gravity flipping mechanics. Run as far as possible, dodge obstacles, collect coins and unleash power-ups.">Rychlá 2D runner hra založená na obracení gravitace. Doběhni co nejdále, vyhýbej se překážkám, sbírej mince a aktivuj power-upy v dynamickém prostředí.</p>
+        
+        <div class="project-footer">
+          <div class="mechanics-badges">
+            <span data-cs="Změna Gravitace" data-en="Gravity Flip">Změna Gravitace</span>
+            <span data-cs="Power-upy" data-en="Power-ups">Power-ups</span>
+            <span data-cs="Highscore System" data-en="Highscore System">Highscore System</span>
+          </div>
+          <button class="link-btn" data-cs="Detail Hry →" data-en="Game Details →">Detail Hry →</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2: Puzzle World -->
+    <article class="project open-game-modal" data-project="puzzle-world" data-category="game dev" data-game="puzzle-world">
+      <div class="project-card-glow"></div>
+      <div class="project-media">
+        <img src="assets/images/puzzle_world.png" alt="Puzzle World Game Showcase" class="project-img-view" loading="lazy">
+        <div class="card-status-pill status-progress" data-cs="V PŘÍPRAVĚ" data-en="IN PROGRESS">V PŘÍPRAVĚ</div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-tags">
+          <span>UNITY</span> <span>MOBILE</span> <span>CASUAL PUZZLE</span>
+        </div>
+        <h2 class="project-title">Puzzle World</h2>
+        <p class="project-desc" data-cs="Pohodová a oddechová hra plná barevných výzev. Ideální pro relaxaci, rozvíjení logického myšlení a příjemné strávení času na mobilních zařízeních." data-en="A relaxing and colorful casual puzzle game designed for fun and logic practice. Packed with engaging tile levels and satisfying brain-teasers.">Pohodová a oddechová hra plná barevných výzev. Ideální pro relaxaci, rozvíjení logického myšlení a příjemné strávení času na mobilních zařízeních.</p>
+        
+        <div class="project-footer">
+          <div class="mechanics-badges">
+            <span data-cs="Relax Hratelnost" data-en="Relaxing Gameplay">Relax Hratelnost</span>
+            <span data-cs="Stylizovaný Design" data-en="Stylized Art">Stylizovaný Design</span>
+          </div>
+          <button class="link-btn" data-cs="Detail Hry →" data-en="Game Details →">Detail Hry →</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: Last Island Colony -->
+    <article class="project open-game-modal" data-project="last-island" data-category="game dev" data-game="last-island">
+      <div class="project-card-glow"></div>
+      <div class="project-media">
+        <img src="assets/images/last_island.png" alt="Last Island Colony Showcase" class="project-img-view" loading="lazy">
+        <div class="card-status-pill status-dev" data-cs="VE VÝVOJI" data-en="IN DEVELOPMENT">VE VÝVOJI</div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-tags">
+          <span>UNITY 3D</span> <span>PC / MOBILE</span> <span>SURVIVAL STRATEGY</span>
+        </div>
+        <h2 class="project-title">Last Island Colony</h2>
+        <p class="project-desc" data-cs="Napínavá survivor hra, ve které budujete poslední lidskou kolonii a chráníte ji před obávanými temnými piráty. Sbírejte klíčové suroviny (jídlo, kámen, dřevo a mince), postupně rozšiřujte ostrov, eliminujte hrozící nebezpečí a udržte své obyvatele naživu." data-en="A tense survivor strategy game where you build and defend the last human colony against dark pirates. Gather critical resources (food, stone, wood, coins), expand your island territory, eliminate hazards, and keep your population alive.">Napínavá survivor hra, ve které budujete poslední lidskou kolonii a chráníte ji před obávanými temnými piráty. Sbírejte klíčové suroviny (jídlo, kámen, dřevo a mince), postupně rozšiřujte ostrov, eliminujte hrozící nebezpečí a udržte své obyvatele naživu.</p>
+        
+        <div class="project-footer">
+          <div class="mechanics-badges">
+            <span data-cs="Obrana před Piráty" data-en="Pirate Defense">Obrana před Piráty</span>
+            <span data-cs="Sběr Surovin (Jídlo, Dřevo...)" data-en="Resource Gathering">Sběr Surovin (Jídlo, Dřevo...)</span>
+            <span data-cs="Zvětšování Ostrova" data-en="Island Expansion">Zvětšování Ostrova</span>
+          </div>
+          <button class="link-btn" data-cs="Detail Hry →" data-en="Game Details →">Detail Hry →</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 4: 3D Assets & Showcase -->
+    <article class="project" data-project="3d-assets" data-category="3d">
+      <div class="project-card-glow"></div>
+      <div class="project-media">
+        <img id="asset-main-view" src="assets/images/3d_asset_1.png" alt="3D Modeling Showcase" class="project-img-view zoom-trigger" data-img="assets/images/3d_asset_1.png" data-caption="Blender 3D Game Model 1" loading="lazy">
+        <div class="card-status-pill status-custom" data-cs="4x 3D MODELY" data-en="4x 3D MODELS">4x 3D MODELY</div>
+        
+        <!-- Interactive 4-Thumbnail Selector Bar -->
+        <div class="asset-thumb-overlay">
+          <img src="assets/images/3d_asset_1.png" alt="3D Model 1" class="asset-thumb active" data-asset-src="assets/images/3d_asset_1.png" data-caption="Blender 3D Game Model 1">
+          <img src="assets/images/3d_asset_2.png" alt="3D Model 2" class="asset-thumb" data-asset-src="assets/images/3d_asset_2.png" data-caption="Blender 3D Game Model 2">
+          <img src="assets/images/3d_asset_3.png" alt="3D Model 3" class="asset-thumb" data-asset-src="assets/images/3d_asset_3.png" data-caption="Blender 3D Game Model 3">
+          <img src="assets/images/3d_asset_4.png" alt="3D Model 4" class="asset-thumb" data-asset-src="assets/images/3d_asset_4.png" data-caption="Blender 3D Game Model 4">
+        </div>
+      </div>
+      
+      <div class="project-info">
+        <div class="project-tags">
+          <span>BLENDER</span> <span>LOW-POLY / HIGH-POLY</span> <span>UNITY READY</span>
+        </div>
+        <h2 class="project-title" data-cs="3D Modely & Herní Grafika" data-en="3D Models & Game Art">3D Modely & Herní Grafika</h2>
+        <p class="project-desc" data-cs="Tvorba vlastních 3D modelů pro hry – rekvizity, postavy, budovy, vozidla i prostředí s optimalizovanou topologií a texturami přímo připravenými pro import do Unity." data-en="Creation of custom 3D models for games - props, environments, mechanical assets and stylized items optimized for Unity engine performance.">Tvorba vlastních 3D modelů pro hry – rekvizity, postavy, budovy, vozidla i prostředí s optimalizovanou topologií a texturami přímo připravenými pro import do Unity.</p>
+        
+        <div class="project-footer">
+          <div class="mechanics-badges">
+            <span data-cs="4 Modely v Galerii" data-en="4 Models in Gallery">4 Modely v Galerii</span>
+            <span data-cs="Texture Maps" data-en="Texture Maps">Texture Maps</span>
+          </div>
+          <button class="link-btn open-3d-gallery-btn" data-cs="Zobrazit Galérii (4) →" data-en="View Gallery (4) →">Zobrazit Galérii (4) →</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Interactive Audience / Collaboration Breakdown Section -->
+<section class="section audience-section">
+  <div class="section-head">
+    <div class="section-tag"><span class="tag-num">01.5</span> // <b data-cs="JAK MŮŽEME SPOLUPRACOVAT?" data-en="HOW CAN WE COLLABORATE?">JAK MŮŽEME SPOLUPRACOVAT?</b></div>
+    <p data-cs="Vyberte si kategorii, která nejlépe odpovídá vašim záměrům." data-en="Select the category that best matches your goals.">Vyberte si kategorii, která nejlépe odpovídá vašim záměrům.</p>
+  </div>
+  <div class="header-accent-line"></div>
+
+  <div class="audience-grid">
+    <!-- Card 1: Pro Hráče -->
+    <div class="audience-card" data-tilt>
+      <div class="audience-badge">01 // GAMERS & PLAYERS</div>
+      <div class="audience-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v2H6v-2H4v-2h2V9h2v2h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <h3 data-cs="Pro Hráče" data-en="For Gamers">Pro Hráče</h3>
+      <p data-cs="Sledujte vývoj mých originálních her, získejte přednostní přístup k beta testování a stahujte připravované tituly na Google Play." data-en="Follow the development of my original games, get early access to beta testing, and download upcoming releases on Google Play.">Sledujte vývoj mých originálních her, získejte přednostní přístup k beta testování a stahujte připravované tituly na Google Play.</p>
+      <div class="audience-footer">
+        <a href="#work" class="btn-audience-action" data-cs="Prozkoumat Hry ↓" data-en="Explore Games ↓">Prozkoumat Hry ↓</a>
+      </div>
+    </div>
+
+    <!-- Card 2: Pro Vývojáře & Studia -->
+    <div class="audience-card" data-tilt>
+      <div class="audience-badge">02 // DEV STUDIOS</div>
+      <div class="audience-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+      </div>
+      <h3 data-cs="Pro Vývojáře & Studia" data-en="For Devs & Studios">Pro Vývojáře & Studia</h3>
+      <p data-cs="Potřebujete pomoc s C# skriptováním, fyzikou, herní logikou nebo 3D assety z Blenderu? Rád se připojím k vašemu týmu jako freelance vývojář." data-en="Need support with Unity C# scripting, physics, gameplay mechanics or Blender 3D assets? I can join your team as a freelance developer.">Potřebujete pomoc s C# skriptováním, fyzikou, herní logikou nebo 3D assety z Blenderu? Rád se připojím k vašemu týmu jako freelance vývojář.</p>
+      <div class="audience-footer">
+        <a href="#services" class="btn-audience-action" data-cs="Zobrazit Služby ↓" data-en="View Services ↓">Zobrazit Služby ↓</a>
+      </div>
+    </div>
+
+    <!-- Card 3: Pro Klienty & Zakázkový Vývoj -->
+    <div class="audience-card highlight-card" data-tilt>
+      <div class="audience-badge highlight-badge" data-cs="03 // TVORBA NA KLÍČ" data-en="03 // FULL TURNKEY">03 // TVORBA NA KLÍČ</div>
+      <div class="audience-icon highlight-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 data-cs="Hra na Zakázku" data-en="Custom Game Build">Hra na Zakázku</h3>
+      <p data-cs="Máte nápad na mobilní či PC hru? Zajistím kompletní realizaci od návrhu pravidel, 3D modelování, programování až po finální sestavení." data-en="Have a concept for a mobile or PC game? I provide end-to-end development from game design, 3D modeling, coding to final build release.">Máte nápad na mobilní či PC hru? Zajistím kompletní realizaci od návrhu pravidel, 3D modelování, programování až po finální sestavení.</p>
+      <div class="audience-footer">
+        <a href="#contact" class="btn-audience-action btn-highlight" data-cs="Poptat Vývoj Her →" data-en="Inquire Game Build →">Poptat Vývoj Her →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services / Custom Work Section -->
+<section id="services" class="services">
+  <div class="services-container">
+    <div class="section-head">
+      <div class="section-tag"><span class="tag-num">02</span> // <b data-cs="SLUŽBY NA ZAKÁZKU" data-en="CUSTOM SERVICES">SLUŽBY NA ZAKÁZKU</b></div>
+      <p data-cs="Máte nápad na hru, aplikaci nebo potřebujete pomoci s vývojem?" data-en="Have a game idea, need custom scripts or 3D assets?">Máte nápad na hru, aplikaci nebo potřebujete pomoci s vývojem?</p>
+    </div>
+    <div class="header-accent-line"></div>
+
+    <div class="service-layout">
+      <div class="services-heading-wrap">
+        <h2 data-cs="CO PRO VÁS MŮŽU VYTVOŘIT?" data-en="WHAT CAN I BUILD FOR YOU?">
+          CO PRO VÁS MŮŽU VYTVOŘIT?
+        </h2>
+        <p class="services-subtext" data-cs="Pomohu vám v jakékoliv fázi projektu – od vytvoření prototypu přes psaní čistých skriptů až po dodání kompletní hry na klíč." data-en="I assist at any stage of development – from prototyping and C# mechanics to releasing a turnkey game.">Pomohu vám v jakékoliv fázi projektu – od vytvoření prototypu přes psaní čistých skriptů až po dodání kompletní hry na klíč.</p>
+        <a href="#contact" class="btn btn-outline" data-cs="NEZÁVAZNÁ POPTÁVKA" data-en="GET IN TOUCH">NEZÁVAZNÁ POPTÁVKA</a>
+      </div>
+
+      <div class="services-list">
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v2H6v-2H4v-2h2V9h2v2h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm3-3c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <div class="service-content">
+            <span class="service-num">01</span>
+            <h3 data-cs="Tvorba Her na Zakázku" data-en="Custom Game Development">Tvorba Her na Zakázku</h3>
+            <p data-cs="Kompletní vývoj 2D a 3D her v Unity od konceptu, game designu až po finální sestavení pro Android, PC nebo web." data-en="Full-cycle 2D and 3D game development in Unity from initial prototype to release build for Android, PC or Web.">Kompletní vývoj 2D a 3D her v Unity od konceptu, game designu až po finální sestavení pro Android, PC nebo web.</p>
+            <div class="service-tags"><span>UNITY</span><span>C#</span><span>GAME DESIGN</span></div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+          </div>
+          <div class="service-content">
+            <span class="service-num">02</span>
+            <h3 data-cs="Skripty & C# Systémy" data-en="Scripts & C# Architecture">Skripty & C# Systémy</h3>
+            <p data-cs="Programování herních mechanik, systémů pro ukládání dat (Save/Load), inventářů, AI nepřátel a fyzikálních skriptů s vysokým výkonem." data-en="Programming performant gameplay mechanics, AI behaviors, UI systems, data save/load architecture and custom Unity components.">Programování herních mechanik, systémů pro ukládání dat (Save/Load), inventářů, AI nepřátel a fyzikálních skriptů s vysokým výkonem.</p>
+            <div class="service-tags"><span>C# SCRIPTING</span><span>UNITY API</span><span>PHYSICS</span></div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="service-content">
+            <span class="service-num">03</span>
+            <h3 data-cs="3D Modely & Assety" data-en="3D Models & Game Assets">3D Modely & Assety</h3>
+            <p data-cs="Modelování v Blenderu, optimalizovaný 3D obsah (low-poly/high-poly), UV rozbalení, texturování a korektní nastavení prefabů v Unity." data-en="3D modeling in Blender, low-poly & high-poly asset creation, UV unwrapping, texturing and seamless Unity prefab integration.">Modelování v Blenderu, optimalizovaný 3D obsah (low-poly/high-poly), UV rozbalení, texturování a korektní nastavení prefabů v Unity.</p>
+            <div class="service-tags"><span>BLENDER</span><span>3D MODELING</span><span>TEXTURES</span></div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z"/></svg>
+          </div>
+          <div class="service-content">
+            <span class="service-num">04</span>
+            <h3 data-cs="Herní Logika & Prototypování" data-en="Game Logic & Prototyping">Herní Logika & Prototypování</h3>
+            <p data-cs="Tvorba rychlých hratelných prototypů pro otestování nápadu (Game Feel), ladění vyváženosti pravidel a náročnosti úrovní." data-en="Rapid gameplay prototyping to test core mechanics, balancing game feel, player controls and level difficulty flow.">Tvorba rychlých hratelných prototypů pro otestování nápadu (Game Feel), ladění vyváženosti pravidel a náročnosti úrovní.</p>
+            <div class="service-tags"><span>GAME FEEL</span><span>PROTOTYPING</span><span>BALANCING</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about">
+  <div class="section-head">
+    <div class="section-tag"><span class="tag-num">03</span> // <b data-cs="O MNĚ" data-en="ABOUT ME">O MNĚ</b></div>
+  </div>
+  <div class="header-accent-line"></div>
+
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-card-glow"></div>
+      <div class="about-photo-frame">
+        <img src="assets/images/lukas_jurecka.jpg" alt="Lukáš Jurečka — Indie Game Developer" class="developer-photo" loading="lazy">
+        <div class="photo-overlay-vignette"></div>
+        <div class="photo-hud-corners">
+          <span class="hud-corner top-left"></span>
+          <span class="hud-corner top-right"></span>
+          <span class="hud-corner bottom-left"></span>
+          <span class="hud-corner bottom-right"></span>
+        </div>
+        <div class="photo-badge-bar">
+          <strong>LUKÁŠ JUREČKA</strong>
+          <span data-cs="INDIE GAME DEVELOPER" data-en="INDIE GAME DEVELOPER">INDIE GAME DEVELOPER</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <p class="tiny-label" data-cs="KDO JSEM" data-en="WHO I AM">KDO JSEM</p>
+      <h2 data-cs="Měním nápadité koncepty v zábavnou realitu." data-en="Turning imaginative concepts into playable reality.">
+        Měním nápadité koncepty v zábavnou realitu.
+      </h2>
+      <p class="about-bio" data-cs="Jsem vývojář her a 3D tvorby. Zaměřuji se na tvorbu propracovaných herních mechanik, plynulé ovládání a vizuálně atraktivní prostředí. Pracuji primárně v Unity (C#) a Blenderu. Rád pomáhám jak se samostatnými vývojovými úkoly (skripty, modely), tak s kompletní realizací her od nuly." data-en="I am an indie game developer and 3D artist. I focus on creating polished gameplay mechanics, fluid controls and engaging visuals. Working primarily with Unity (C#) and Blender, I enjoy building both custom individual components (scripts, models) and end-to-end games.">
+        Jsem vývojář her a 3D tvorby. Zaměřuji se na tvorbu propracovaných herních mechanik, plynulé ovládání a vizuálně atraktivní prostředí. Pracuji primárně v Unity (C#) a Blenderu. Rád pomáhám jak se samostatnými vývojovými úkoly (skripty, modely), tak s kompletní realizací her od nuly.
+      </p>
+
+      <div class="skills-section">
+        <h4 data-cs="POUŽÍVANÉ TECHNOLOGIE A NÁSTROJE:" data-en="TECHNOLOGIES & TOOLS:">POUŽÍVANÉ TECHNOLOGIE A NÁSTROJE:</h4>
+        <div class="tools-grid">
+          <div class="tool-pill"><span class="tool-dot"></span> UNITY ENGINE</div>
+          <div class="tool-pill"><span class="tool-dot"></span> C# PROGRAMMING</div>
+          <div class="tool-pill"><span class="tool-dot"></span> BLENDER 3D</div>
+          <div class="tool-pill"><span class="tool-dot"></span> ANDROID DEV</div>
+          <div class="tool-pill"><span class="tool-dot"></span> GAME PHYSICS</div>
+          <div class="tool-pill"><span class="tool-dot"></span> SHADERS & VFX</div>
+          <div class="tool-pill"><span class="tool-dot"></span> GIT & VERSION CONTROL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVANTAGES / WHY WORK WITH ME GRID -->
+  <div class="advantages-section">
+    <h3 class="advantages-title" data-cs="PROČ SPOLUPRACOVAT NA VAŠEM PROJEKTU?" data-en="WHY COLLABORATE ON YOUR PROJECT?">PROČ SPOLUPRACOVAT NA VAŠEM PROJEKTU?</h3>
+    <div class="advantages-grid">
+      <div class="adv-card">
+        <span class="adv-num">01</span>
+        <h4 data-cs="Rychlé Prototypování" data-en="Fast Prototyping">Rychlé Prototypování</h4>
+        <p data-cs="Získat funkční verzi nápadu v Unity je otázkou dnů. Testování Game Feel probíhá hned od prvního kroku." data-en="Turn ideas into playable Unity prototypes rapidly. Testing game feel right from step one.">Získat funkční verzi nápadu v Unity je otázkou dnů. Testování Game Feel probíhá hned od prvního kroku.</p>
+      </div>
+
+      <div class="adv-card">
+        <span class="adv-num">02</span>
+        <h4 data-cs="Čistá C# Architektura" data-en="Clean C# Architecture">Čistá C# Architektura</h4>
+        <p data-cs="Přehledný, rozšiřitelný a optimalizovaný kód bez zbytečného balastu, který se snadno spravuje." data-en="Clean, extensible and performant C# code designed for easy maintenance and scaling.">Přehledný, rozšiřitelný a optimalizovaný kód bez zbytečného balastu, který se snadno spravuje.</p>
+      </div>
+
+      <div class="adv-card">
+        <span class="adv-num">03</span>
+        <h4 data-cs="Optimalizace pro Mobily" data-en="Mobile Performance">Optimalizace pro Mobily</h4>
+        <p data-cs="Správné profilování paměti, draw-callů a vykreslování pro zajištění hladkých 60+ FPS na Androidu." data-en="Memory profiling, draw call optimization and smooth 60+ FPS performance on Android devices.">Správné profilování paměti, draw-callů a vykreslování pro zajištění hladkých 60+ FPS na Androidu.</p>
+      </div>
+
+      <div class="adv-card">
+        <span class="adv-num">04</span>
+        <h4 data-cs="Kompletní Realizace" data-en="Turnkey Delivery">Kompletní Realizace</h4>
+        <p data-cs="Od 3D modelů přes programování až po nasazení. Získáte ucelené řešení od jednoho vývojáře." data-en="From 3D models and scripting to release builds. End-to-end solutions delivered seamlessly.">Od 3D modelů přes programování až po nasazení. Získáte ucelené řešení od jednoho vývojáře.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <div class="contact-bg-glow"></div>
+  
+  <div class="contact-container">
+    <div class="section-head">
+      <div class="section-tag"><span class="tag-num">04</span> // <b data-cs="KONTAKT & POPTÁVKA" data-en="CONTACT & INQUIRY">KONTAKT & POPTÁVKA</b></div>
+    </div>
+    <div class="header-accent-line"></div>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <p class="tiny-label" data-cs="MÁTE PROJEKT NEBO NÁPAD?" data-en="HAVE A PROJECT OR IDEA?">MÁTE PROJEKT NEBO NÁPAD?</p>
+        <h2 data-cs="POJĎME SPRÁVNĚ NASTARTOVAT VÝVOJ." data-en="LET'S BRING YOUR GAME TO LIFE.">
+          POJĎME SPRÁVNĚ NASTARTOVAT VÝVOJ.
+        </h2>
+        <p class="contact-desc" data-cs="Napište mi zprávu s vaší představou. Ať už potřebujete celou hru, C# skript, nebo 3D modely na zakázku, rád se s vámi domluvím na podrobnostech." data-en="Send me a message with your project scope. Whether you need a complete game build, custom C# scripts or 3D models, I'll be happy to collaborate.">
+          Napište mi zprávu s vaší představou. Ať už potřebujete celou hru, C# skript, nebo 3D modely na zakázku, rád se s vámi domluvím na podrobnostech.
+        </p>
+
+        <div class="contact-direct">
+          <span class="direct-label" data-cs="E-MAIL PRO POPTÁVKY:" data-en="EMAIL FOR INQUIRIES:">E-MAIL PRO POPTÁVKY:</span>
+          <div class="email-box">
+            <a id="email-link" href="mailto:lukasjurecka30@gmail.com" class="contact-email">lukasjurecka30@gmail.com</a>
+            <button id="copy-email-btn" class="btn-copy" title="Kopírovat email" data-cs="Kopírovat" data-en="Copy">Kopírovat</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Interactive Inquiry Form -->
+      <div class="contact-right">
+        <form id="contact-form" class="inquiry-form">
+          <h3 data-cs="Rychlá Poptávka" data-en="Quick Inquiry">Rychlá Poptávka</h3>
+          
+          <div class="form-group">
+            <label data-cs="O co máte zájem?" data-en="What are you interested in?">O co máte zájem?</label>
+            <div class="interest-chips">
+              <button type="button" class="chip active" data-value="Tvorba Hry na Zakázku" data-cs="Tvorba Hry" data-en="Full Game">Tvorba Hry</button>
+              <button type="button" class="chip" data-value="Skripty a C# Kód" data-cs="C# Skripty" data-en="C# Scripts">C# Skripty</button>
+              <button type="button" class="chip" data-value="3D Modely" data-cs="3D Modely" data-en="3D Models">3D Modely</button>
+              <button type="button" class="chip" data-value="Konzultace / Jiné" data-cs="Konzultace" data-en="Consultation">Konzultace</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-name" data-cs="Vaše Jméno / Název firmy" data-en="Your Name / Company">Vaše Jméno / Název firmy</label>
+            <input type="text" id="form-name" placeholder="Jan Novák" required>
+          </div>
+
+          <div class="form-group">
+            <label for="form-email" data-cs="Váš E-mail" data-en="Your Email">Váš E-mail</label>
+            <input type="email" id="form-email" placeholder="jan@example.cz" required>
+          </div>
+
+          <div class="form-group">
+            <label for="form-msg" data-cs="Popis projektu nebo dotaz" data-en="Project Details or Question">Popis projektu nebo dotaz</label>
+            <textarea id="form-msg" rows="4" placeholder="Popište stručně váš nápad nebo požadavky..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" data-cs="ODESLAT POPTÁVKU" data-en="SEND INQUIRY">
+            <span>ODESLAT POPTÁVKU</span>
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+          
+          <div id="form-status" class="form-status-msg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Interactive Game Detail Modal -->
+<div id="game-modal" class="modal-backdrop">
+  <div class="modal-content">
+    <button id="modal-close" class="modal-close-btn">&times;</button>
+    <div class="modal-body">
+      <div class="modal-header-img">
+        <img id="modal-img" src="" alt="Game Banner">
+        <div id="modal-status" class="status-pill"></div>
+      </div>
+      <div class="modal-details">
+        <div id="modal-tags" class="project-tags"></div>
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        
+        <div class="modal-section">
+          <h4 data-cs="HLAVNÍ MECHANIKY A PRVKY:" data-en="KEY MECHANICS & FEATURES:">HLAVNÍ MECHANIKY A PRVKY:</h4>
+          <ul id="modal-features" class="feature-list"></ul>
+        </div>
+
+        <div class="modal-meta-grid">
+          <div class="meta-box">
+            <span class="meta-label" data-cs="PLATFORMA" data-en="PLATFORM">PLATFORMA</span>
+            <strong id="modal-platform">Android / Mobile</strong>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label" data-cs="ENGINE" data-en="ENGINE">ENGINE</span>
+            <strong id="modal-engine">Unity Engine (C#)</strong>
+          </div>
+          <div class="meta-box">
+            <span class="meta-label" data-cs="VÝVŮJÁŘ" data-en="DEVELOPER">VÝVŮJÁŘ</span>
+            <strong>Lukáš Jurečka</strong>
+          </div>
+        </div>
+
+        <div class="modal-action">
+          <a href="#contact" class="btn btn-primary modal-close-action" data-cs="CHCI PODOBNOU HRU NA ZAKÁZKU" data-en="INQUIRE SIMILAR GAME">CHCI PODOBNOU HRU NA ZAKÁZKU</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FULL-SCREEN UNCROPPED IMAGE LIGHTBOX MODAL -->
+<div id="image-lightbox" class="lightbox-backdrop">
+  <button id="lightbox-close" class="lightbox-close-btn">&times;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Full Screen Screenshot">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+  </div>
+</div>
+
+<!-- CYBERPUNK DEVELOPER TERMINAL CONSOLE -->
+<div id="cyber-terminal" class="terminal-drawer">
+  <div class="terminal-header">
+    <div class="terminal-title">
+      <span class="term-status-dot"></span> LJ DEVELOPER TERMINAL V3.0 [C# / UNITY / BLENDER]
+    </div>
+    <button id="terminal-close" class="terminal-minimize-btn">&times;</button>
+  </div>
+  <div id="terminal-body" class="terminal-body">
+    <div class="term-line output">Lukáš Jurečka Indie Game Developer Console initialized.</div>
+    <div class="term-line output">Type <span class="cmd-highlight">'help'</span> for available commands or <span class="cmd-highlight">'games'</span> to list projects.</div>
+  </div>
+  <div class="terminal-input-row">
+    <span class="term-prompt">guest@lj-dev:~$</span>
+    <input type="text" id="terminal-input" placeholder="type a command..." autocomplete="off">
+  </div>
+</div>
+
+<!-- Terminal Toggle Trigger Floating Button -->
+<button id="terminal-toggle-btn" class="terminal-float-trigger">
+  <span class="term-pulse"></span>
+  <span data-cs="DEV TERMINÁL" data-en="DEV TERMINAL">DEV TERMINÁL</span>
+</button>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">
+    <strong>LUKÁŠ JUREČKA<span> / INDIE GAME DEV</span></strong>
+  </div>
+  <div class="footer-copy">
+    © <span class="current-year">2026</span> Lukáš Jurečka. Všechna práva vyhrazena.
+  </div>
+  <button id="back-to-top" class="back-to-top" title="Nahoru">
+    <span>NAHORU</span>
+    <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
+  </button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
