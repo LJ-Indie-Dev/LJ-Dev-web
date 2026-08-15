@@ -1515,7 +1515,8 @@ button, input, textarea {
 .contact-container {
   max-width: 1380px;
   margin: 0 auto;
-  padding: 130px 6vw;
+  padding: 0;
+  width: 100%;
 }
 
 .contact-grid {
@@ -2481,28 +2482,65 @@ button, input, textarea {
   .services-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 18px !important;
     width: 100% !important;
   }
 
   .service-card {
     display: flex !important;
-    flex-direction: column !important;
+    flex-direction: row !important;
     align-items: flex-start !important;
-    padding: 18px 14px !important;
-    gap: 12px !important;
+    padding: 22px 18px !important;
+    gap: 16px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    border-radius: 20px !important;
+    border: 1.5px solid var(--card-border) !important;
+    background: var(--card-bg) !important;
   }
 
   .service-icon-box {
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
   }
 
-  .service-card h3 { font-size: 1.15rem !important; }
-  .service-card p { font-size: 0.86rem !important; line-height: 1.5 !important; }
+  .service-content {
+    flex: 1 !important;
+    width: 100% !important;
+  }
+
+  .service-num {
+    font-size: 0.75rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .service-content h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .service-content p {
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-top: 10px !important;
+  }
+
+  .service-tags span {
+    font-size: 0.62rem !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+  }
 
   /* 7. SECTION 03: ABOUT & ADVANTAGES */
   .about-grid {
@@ -2546,8 +2584,10 @@ button, input, textarea {
   }
 
   /* 8. SECTION 04: CONTACT & QUICK INQUIRY FORM */
-  .contact-container {
-    padding: 48px 4vw !important;
+  .contact-container,
+  .services-container {
+    padding: 0 !important;
+    margin: 0 auto !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
