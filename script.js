@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSoundFX();
   setupCyberTerminal();
   setupStatsCounters();
+  setupGDPRAndCookies();
   updateYears();
 });
 
@@ -863,4 +864,85 @@ function updateYears() {
   const yearEls = document.querySelectorAll('.current-year');
   const year = new Date().getFullYear();
   yearEls.forEach(el => el.textContent = year);
+}
+
+// GDPR & Cookies Modal & Banner Handler
+function setupGDPRAndCookies() {
+  const gdprModal = document.getElementById('gdpr-modal');
+  const openGdprBtn = document.getElementById('open-gdpr-btn');
+  const openCookiesBtn = document.getElementById('open-cookies-btn');
+  const closeGdprBtn = document.getElementById('gdpr-modal-close');
+  const tabGdprBtn = document.getElementById('tab-gdpr-btn');
+  const tabCookiesBtn = document.getElementById('tab-cookies-btn');
+  const tabGdprContent = document.getElementById('legal-tab-gdpr');
+  const tabCookiesContent = document.getElementById('legal-tab-cookies');
+
+  const cookiesBanner = document.getElementById('cookies-banner');
+  const cookiesAcceptBtn = document.getElementById('cookies-accept-btn');
+  const cookiesInfoBtn = document.getElementById('cookies-info-btn');
+
+  function openLegalModal(tab) {
+    if (!gdprModal) return;
+    gdprModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    switchLegalTab(tab);
+    playTone(600, 0.08, 'sine');
+  }
+
+  function closeLegalModal() {
+    if (!gdprModal) return;
+    gdprModal.classList.remove('active');
+    document.body.style.overflow = '';
+    playTone(350, 0.08, 'sine');
+  }
+
+  function switchLegalTab(tab) {
+    if (tab === 'cookies') {
+      if (tabGdprBtn) tabGdprBtn.classList.remove('active');
+      if (tabCookiesBtn) tabCookiesBtn.classList.add('active');
+      if (tabGdprContent) tabGdprContent.classList.remove('active');
+      if (tabCookiesContent) tabCookiesContent.classList.add('active');
+    } else {
+      if (tabCookiesBtn) tabCookiesBtn.classList.remove('active');
+      if (tabGdprBtn) tabGdprBtn.classList.add('active');
+      if (tabCookiesContent) tabCookiesContent.classList.remove('active');
+      if (tabGdprContent) tabGdprContent.classList.add('active');
+    }
+  }
+
+  if (openGdprBtn) openGdprBtn.addEventListener('click', () => openLegalModal('gdpr'));
+  if (openCookiesBtn) openCookiesBtn.addEventListener('click', () => openLegalModal('cookies'));
+  if (closeGdprBtn) closeGdprBtn.addEventListener('click', closeLegalModal);
+  if (tabGdprBtn) tabGdprBtn.addEventListener('click', () => switchLegalTab('gdpr'));
+  if (tabCookiesBtn) tabCookiesBtn.addEventListener('click', () => switchLegalTab('cookies'));
+
+  if (gdprModal) {
+    gdprModal.addEventListener('click', (e) => {
+      if (e.target === gdprModal) closeLegalModal();
+    });
+  }
+
+  // Cookies Banner Handler
+  if (cookiesBanner) {
+    const isCookiesAccepted = localStorage.getItem('lj_cookies_accepted');
+    if (!isCookiesAccepted) {
+      setTimeout(() => {
+        cookiesBanner.classList.add('active');
+      }, 1200);
+    }
+
+    if (cookiesAcceptBtn) {
+      cookiesAcceptBtn.addEventListener('click', () => {
+        localStorage.setItem('lj_cookies_accepted', 'true');
+        cookiesBanner.classList.remove('active');
+        playTone(800, 0.08, 'sine');
+      });
+    }
+
+    if (cookiesInfoBtn) {
+      cookiesInfoBtn.addEventListener('click', () => {
+        openLegalModal('cookies');
+      });
+    }
+  }
 }

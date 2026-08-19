@@ -36,6 +36,9 @@
     <a href="#services" data-cs="SLUŽBY" data-en="SERVICES">SLUŽBY</a>
     <a href="#about" data-cs="O MNĚ" data-en="ABOUT">O MNĚ</a>
     <a href="#contact" data-cs="KONTAKT" data-en="CONTACT">KONTAKT</a>
+    <a href="https://www.patreon.com/LJIndieGameDeveloper/posts/welcome-to-my-166987775?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" rel="noopener noreferrer" class="mobile-patreon-btn">
+      <span class="heart-pulse-icon">❤️</span><span data-cs="SUPPORT MY WORK" data-en="SUPPORT MY WORK">SUPPORT MY WORK</span>
+    </a>
     <a href="#contact" class="mobile-cta-btn" data-cs="ZAČÍT PROJEKT →" data-en="START PROJECT →">ZAČÍT PROJEKT →</a>
   </nav>
 
@@ -98,6 +101,10 @@
       <a href="#work" class="btn btn-primary" data-cs="PROZKOUMAT MOJE HRY" data-en="EXPLORE MY GAMES">
         <span>PROZKOUMAT MOJE HRY</span>
         <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
+      <a href="https://www.patreon.com/LJIndieGameDeveloper/posts/welcome-to-my-166987775?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link" target="_blank" rel="noopener noreferrer" class="btn btn-patreon">
+        <span class="heart-pulse-icon">❤️</span>
+        <span data-cs="SUPPORT MY WORK" data-en="SUPPORT MY WORK">SUPPORT MY WORK</span>
       </a>
       <a href="#contact" class="btn btn-secondary" data-cs="NEZÁVAZNÁ POPTÁVKA" data-en="GET IN TOUCH">NEZÁVAZNÁ POPTÁVKA</a>
     </div>
@@ -642,6 +649,11 @@
   <div class="footer-brand">
     <strong>LUKÁŠ JUREČKA<span> / INDIE GAME DEV</span></strong>
   </div>
+  <div class="footer-legal">
+    <button id="open-gdpr-btn" class="footer-legal-btn" data-cs="GDPR a Ochrana osobních údajů" data-en="GDPR & Privacy Policy">GDPR a Ochrana osobních údajů</button>
+    <span class="legal-dot">•</span>
+    <button id="open-cookies-btn" class="footer-legal-btn" data-cs="Zásady Cookies" data-en="Cookies Policy">Zásady Cookies</button>
+  </div>
   <div class="footer-copy">
     © <span class="current-year">2026</span> Lukáš Jurečka. Všechna práva vyhrazena.
   </div>
@@ -650,6 +662,86 @@
     <svg viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
   </button>
 </footer>
+
+<!-- GDPR & COOKIES PRIVACY MODAL -->
+<div id="gdpr-modal" class="modal-backdrop">
+  <div class="modal-content legal-modal-content">
+    <button id="gdpr-modal-close" class="modal-close-btn">&times;</button>
+    
+    <div class="legal-modal-header">
+      <div class="legal-tabs">
+        <button id="tab-gdpr-btn" class="legal-tab-btn active" data-cs="GDPR a Ochrana Osobních Údajů" data-en="GDPR & Privacy Policy">GDPR a Ochrana Osobních Údajů</button>
+        <button id="tab-cookies-btn" class="legal-tab-btn" data-cs="Zásady používání Cookies" data-en="Cookies Policy">Zásady používání Cookies</button>
+      </div>
+    </div>
+
+    <div class="legal-modal-body">
+      <!-- GDPR Tab Content -->
+      <div id="legal-tab-gdpr" class="legal-tab-content active">
+        <h3 data-cs="Informace o zpracování osobních údajů (GDPR)" data-en="Information on Personal Data Processing (GDPR)">Informace o zpracování osobních údajů (GDPR)</h3>
+        <p data-cs="Ochrana vašich osobních údajů je pro mě velmi důležitá. Zde naleznete přehledné informace o tom, jaké údaje zpracovávám a jaká máte práva v souladu s Nařízením (EU) 2016/679 (GDPR)." data-en="The protection of your personal data is very important to me. Here you will find clear information on what data I process and your rights in accordance with Regulation (EU) 2016/679 (GDPR).">
+          Ochrana vašich osobních údajů je pro mě velmi důležitá. Zde naleznete přehledné informace o tom, jaké údaje zpracovávám a jaká máte práva v souladu s Nařízením (EU) 2016/679 (GDPR).
+        </p>
+
+        <h4 data-cs="1. Správce osobních údajů" data-en="1. Personal Data Controller">1. Správce osobních údajů</h4>
+        <p data-cs="Správcem vašich osobních údajů je Lukáš Jurečka – Indie Game Developer & 3D Specialist, kontaktní e-mail: lukasjurecka30@gmail.com." data-en="The controller of your personal data is Lukáš Jurečka – Indie Game Developer & 3D Specialist, contact email: lukasjurecka30@gmail.com.">
+          Správcem vašich osobních údajů je Lukáš Jurečka – Indie Game Developer & 3D Specialist, kontaktní e-mail: <strong>lukasjurecka30@gmail.com</strong>.
+        </p>
+
+        <h4 data-cs="2. Jaké údaje zpracovávám a účel" data-en="2. Processed Data & Purpose">2. Jaké údaje zpracovávám a účel</h4>
+        <p data-cs="Zpracovávám pouze údaje, které mi sami dobrovolně poskytnete prostřednictvím poptávkového/kontaktního formuláře nebo e-mailem (Jméno, E-mailová adresa, popis projektu či dotaz). Účelem zpracování je výhradně komunikace s vámi a vyřízení vaší poptávky." data-en="I only process data that you voluntarily provide through the inquiry form or email (Name, Email address, project details). The sole purpose is communicating with you and fulfilling your inquiry.">
+          Zpracovávám pouze údaje, které mi sami dobrovolně poskytnete prostřednictvím poptávkového formuláře nebo e-mailem (Jméno, E-mailová adresa, popis projektu či dotaz). Účelem je výhradně vyřízení vaší poptávky a komunikace ohledně zakázkového vývoje.
+        </p>
+
+        <h4 data-cs="3. Doba uchování a předávání třetím stranám" data-en="3. Retention & Third Parties">3. Doba uchování a předávání třetím stranám</h4>
+        <p data-cs="Vaše údaje uchovávám pouze po dobu nezbytnou k vyřízení komunikace. Údaje nepředávám žádným třetím stranám ani je nevyužívám k marketingovému spamu." data-en="Your data is retained only for the time necessary to process communications. Data is never sold or provided to third parties for marketing.">
+          Vaše údaje uchovávám pouze po dobu nezbytnou k vyřízení komunikace. Vaše údaje nepředávám žádným třetím stranám k reklamním účelům.
+        </p>
+
+        <h4 data-cs="4. Vaše práva" data-en="4. Your Rights">4. Vaše práva</h4>
+        <p data-cs="Máte právo kdykoliv požádat o přístup ke svým osobním údajům, jejich opravu, omezení zpracování nebo kompletní vymazání. Stačí napsat na e-mail: lukasjurecka30@gmail.com." data-en="You have the right to request access, correction, restriction, or complete erasure of your personal data at any time by emailing: lukasjurecka30@gmail.com.">
+          Máte právo kdykoliv požádat o přístup ke svým osobním údajům, jejich opravu, omezení nebo kompletní vymazání. Stačí napsat na e-mail: <strong>lukasjurecka30@gmail.com</strong>.
+        </p>
+      </div>
+
+      <!-- Cookies Tab Content -->
+      <div id="legal-tab-cookies" class="legal-tab-content">
+        <h3 data-cs="Zásady používání souborů Cookies" data-en="Cookies Policy">Zásady používání souborů Cookies</h3>
+        <p data-cs="Tento web respektuje vaše soukromí a je navržen tak, aby byl maximálně šetrný ke zpracování dat." data-en="This website respects your privacy and is designed to minimize data processing.">
+          Tento web respektuje vaše soukromí a je navržen s důrazem na bezpečnost a přehlednost.
+        </p>
+
+        <h4 data-cs="1. Pouze technické a funkční cookies" data-en="1. Necessary Technical Cookies Only">1. Pouze technické a funkční cookies</h4>
+        <p data-cs="Tento web využívá pouze nezbytné technické a paměťové prvky (localStorage / cookies) sloužící pro správné fungování webu – například uložení vaší volby jazyka (CZ / EN) nebo stavu zvukových efektů." data-en="This website uses only necessary technical elements (localStorage / cookies) for basic site functionality – such as remembering your language choice (CZ / EN) or sound effects toggle.">
+          Tento web využívá pouze nezbytné technické a paměťové prvky (localStorage / cookies) sloužící pro správné fungování webových stránek – např. paměť pro zvolený jazyk (CZ / EN) nebo stav zvukových efektů.
+        </p>
+
+        <h4 data-cs="2. Žádné reklamní ani sledovací cookies" data-en="2. No Advertising or Tracking Cookies">2. Žádné reklamní ani sledovací cookies</h4>
+        <p data-cs="Na tomto webu nepoužívám žádné sledovací cookies třetích stran pro cílění reklamy ani neprodávám data analytickým společnostem." data-en="I do not use third-party tracking or advertising cookies, nor do I sell analytics data to external brokers.">
+          Na tomto webu nepoužívám žádné sledovací ani reklamní cookies třetích stran pro účely cílění reklamy.
+        </p>
+
+        <h4 data-cs="3. Jak zakázat cookies v prohlížeči" data-en="3. How to Disable Cookies in Browser">3. Jak zakázat cookies v prohlížeči</h4>
+        <p data-cs="Soubory cookies můžete kdykoliv zakázat nebo vymazat v nastavení vašeho internetového prohlížeče (Chrome, Firefox, Safari, Edge)." data-en="You can disable or clear cookies at any time in your web browser settings (Chrome, Firefox, Safari, Edge).">
+          Soubory cookies můžete kdykoliv zakázat nebo vymazat přímo v nastavení vašeho internetového prohlížeče.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIES BANNER NOTIFICATION -->
+<div id="cookies-banner" class="cookies-banner">
+  <div class="cookies-banner-content">
+    <p class="cookies-text" data-cs="🍪 Tento web používá pouze nezbytné technické cookies pro správný chod stránek." data-en="🍪 This website uses only essential technical cookies for basic site functionality.">
+      🍪 Tento web používá pouze nezbytné technické cookies pro správný chod stránek.
+    </p>
+    <div class="cookies-actions">
+      <button id="cookies-info-btn" class="btn-cookies-secondary" data-cs="Více o GDPR & Cookies" data-en="More about GDPR & Cookies">Více o GDPR & Cookies</button>
+      <button id="cookies-accept-btn" class="btn btn-primary btn-sm" data-cs="ROZUMÍM" data-en="ACCEPT">ROZUMÍM</button>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
