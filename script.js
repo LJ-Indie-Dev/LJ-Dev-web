@@ -29,15 +29,42 @@ const GAMES_DATA = {
     platform: 'Android / Google Play',
     engine: 'Unity 2D (C# Scripting)'
   },
-  'puzzle-world': {
-    title: { cs: 'Puzzle World', en: 'Puzzle World' },
+  'cubes-world': {
+    title: { cs: 'Cubes World', en: 'Cubes World' },
     tags: 'UNITY · MOBILE · CASUAL PUZZLE',
     statusClass: 'status-progress',
     statusText: { cs: 'V PŘÍPRAVĚ', en: 'IN PROGRESS' },
-    img: 'assets/images/puzzle_world.png',
+    img: 'assets/images/cubes_world.png',
     desc: {
-      cs: 'Puzzle World je vytvořen jako oddechová a vizuálně podmanivá hra pro mobilní zařízení. Nabízí desítky unikátních logických úrovní, které rozvíjí myšlení bez zbytečného stresu nebo časového tlaku.',
-      en: 'Puzzle World is crafted as a relaxing and visually captivating casual game for mobile devices. Featuring dozens of unique spatial and color puzzle levels to train your brain without stress.'
+      cs: 'Cubes World je vytvořen jako oddechová a vizuálně podmanivá hra pro mobilní zařízení. Nabízí desítky unikátních logických úrovní, které rozvíjí myšlení bez zbytečného stresu nebo časového tlaku.',
+      en: 'Cubes World is crafted as a relaxing and visually captivating casual game for mobile devices. Featuring dozens of unique spatial and color puzzle levels to train your brain without stress.'
+    },
+    features: {
+      cs: [
+        'Oddechová hratelnost bez agresivních časovačů',
+        'Barevný stylizovaný vizuální design a hmatové animace',
+        'Gradující obtížnost úrovní – od lehkých po náročnější výzvy',
+        'Uklidňující zvukový doprovod a efekty'
+      ],
+      en: [
+        'Relaxing gameplay loop with no high-stress timers',
+        'Vibrant stylized art direction and satisfying animations',
+        'Gradually ramping difficulty curve',
+        'Soothing ambient soundtrack & tactile audio feedback'
+      ]
+    },
+    platform: 'Android & iOS',
+    engine: 'Unity Engine (C#)'
+  },
+  'puzzle-world': {
+    title: { cs: 'Cubes World', en: 'Cubes World' },
+    tags: 'UNITY · MOBILE · CASUAL PUZZLE',
+    statusClass: 'status-progress',
+    statusText: { cs: 'V PŘÍPRAVĚ', en: 'IN PROGRESS' },
+    img: 'assets/images/cubes_world.png',
+    desc: {
+      cs: 'Cubes World je vytvořen jako oddechová a vizuálně podmanivá hra pro mobilní zařízení. Nabízí desítky unikátních logických úrovní, které rozvíjí myšlení bez zbytečného stresu nebo časového tlaku.',
+      en: 'Cubes World is crafted as a relaxing and visually captivating casual game for mobile devices. Featuring dozens of unique spatial and color puzzle levels to train your brain without stress.'
     },
     features: {
       cs: [
@@ -623,12 +650,15 @@ function setupGameModals() {
   const modal = document.getElementById('game-modal');
   const closeBtn = document.getElementById('modal-close');
 
-  document.querySelectorAll('[data-game]').forEach(btn => {
+  document.querySelectorAll('.open-game-modal, [data-game]').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      playTone(720, 0.1, 'sine');
-      const gameKey = btn.getAttribute('data-game');
-      if (GAMES_DATA[gameKey]) {
+      if (e.target.closest('.showcase-tabs')) {
+        return;
+      }
+      const gameKey = btn.getAttribute('data-game') || btn.getAttribute('data-project');
+      if (gameKey && GAMES_DATA[gameKey]) {
+        e.preventDefault();
+        playTone(720, 0.1, 'sine');
         openModal(gameKey);
       }
     });
